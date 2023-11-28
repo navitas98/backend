@@ -1,0 +1,60 @@
+INFO:
+-----
+
+Crear una API es graphql para gestionar las consultas de un hospital. El hospital tendra medicos y citas. Las citas podran pedir los personajes de la API de rick and morty,
+tener en cuenta los limitantes siguientes.
+
+DATOS
+------
+
+MEDICO:
+Guardaremos el nombre, apellido y correo comprobando que tiene el @ y que es una direccion que termina en .com o .es. 
+El medico solo puede trabajar en un hospital y puede dar citas.
+
+HOSPITAL 
+Guardaremos nombre, codigo del pais, codigo postal, pais, ciudad.
+Solo introduciremos el nombre, codigo de pais y el codigo postal. Tanto el pais como la ciudad lo tendremos que optener de la API:https://www.weatherapi.com/
+Un hospital puede tener varios medicos y varias citas de los diferentes pacientes.
+
+CITAS
+Guardaremos el nombre de la cita, la hora de la cita, el dia de la cita, el mes de la cita y el año de la cita. 
+La cita la dara un medico en un hospital y perteneceea a un paciente.
+
+PACIENTE
+Los datos que tendra el paciente seran nombre, status(LIVE,DEAD, UNKNOWN), specie, origin y exit_API.
+Los pacientes tendran guardada la cita.
+
+METODOS
+--------
+MEDICO:
+anadirMedico: Guardaremos la informacion perteneciente al medico comprobando que el correo tiene un @ y termina en .com o .es
+borrarMedico: Borraremos un medico por su Id
+ModificarMedico: Modificaremos los valores de un medico por su ID
+VerMedico: Veremos la informacion de un medico por su Id
+verMedicos: Veremos la informacion de todos los medicos
+
+HOSPITAL:
+anadirHospital: Guardaremos la informacion perteneciente al hospital, tener en cuenta que el pais y la ciudad la tenemos que consiguir de la API
+borrarHospital: Borraremos un hospital por su Id
+ModificarHospital: Modificaremos los valores de un hospital por su ID
+VerHospital: Veremos la informacion de un hospital por su ID, la informacion contendra los grados celsius y el clima que hace en dicha ciudad.
+VerHospitales:Veremos la informacion de todos los hospitales, tambien podremos ver los grados celsius y el clima de cada hospital.
+
+CITAS:
+anadirCita: Guardaremos las citas de un paciente. Guardaremos los datos relativos a las citas. Tener en cuenta que la hora, dia, mes y año se introducira en un unico string,
+comprobar si los datos son correctos y si los podemos guardar, tener en cuenta que un doctor no puede dar dos citas en un mismo margen de tiempo.
+BorrarCita: Borraremos una cita por ID
+ModificarCita: Modificaremos los valores de la cita por ID. 
+VerCita: Vermos la informacion de una cita por su ID.
+VerCitas:Veremos las citas de todos los pacientes.
+VerCitaporDia: Veremos las citas que hay en un determinado dia.
+VerCitaspoaciente: Veremos las citas futuras de un paciente
+VerCitasFuturas: Veremos las citas futuras.
+
+PACIENTE:
+AnadirPaciente: Guardaremos los pacientes, comprobaremos si los pacientes pertenecen a la API de rick and morty. Solo podemos crear citas a los pacientes que esten en la API y su status no sea DEAD. Tambien podremos guardar citas a aquellos pacientes que no esten en la API pero que vivan en la tierra y que su status no sea DEAD
+BorarPaciente: Borrraremos un paciente por su Id
+ModificarPaciente: Modificaremos los datos del paciente. Tener en cuenta que si un paciente tiene citas ya guardadas y los datos no son correctos no podremos modificar al paciente. ejemplo si el paciente tiene un status de DEAD.
+verPaciente: Veremos la informacion de un paciente por su id
+VerPacientes: Veremos la informacion de todos los pacientes.
+
